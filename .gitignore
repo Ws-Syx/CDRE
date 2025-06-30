@@ -1,0 +1,25 @@
+*.log
+*.png
+*.jpg
+*.pkl
+*.model
+*.npy
+build/
+.idea/  # JetBrains IDE
+.vscode/  # VS Code
+venv/
+__pycache__/
+*.pyc
+
+# 系统文件
+.DS_Store  # Mac
+Thumbs.db  # Windows
+
+# 编辑器/IDE 配置
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# 临时文件
+*~  # Vim 临时文件

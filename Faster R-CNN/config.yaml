@@ -1,0 +1,25 @@
+MODEL:
+  WEIGHTS: "./ckpt/faster-rcnn-r50-ytvis-hvsff7w.pth"
+  ROI_HEADS:
+    NUM_CLASSES: 40  
+  META_ARCHITECTURE: "GeneralizedRCNN_v2"
+  BACKBONE:
+    NAME: "build_resnet_fpn_backbone_v3"
+DATALOADER:
+  NUM_WORKERS: 2
+DATASETS:
+  # TRAIN: ("ytvis_pair_train_smc", )
+  # TEST: ("ytvis_pair_valid_smc_24", "ytvis_pair_valid_smc_28", "ytvis_pair_valid_smc_32", "ytvis_pair_valid_smc_36")
+  TRAIN: ("ytvis_pair_train_onlyh264", )
+  # TEST: ("ytvis_pair_valid_x265_26", "ytvis_pair_valid_x265_29", "ytvis_pair_valid_x265_32", "ytvis_pair_valid_x265_35", "ytvis_pair_valid_dcvc_0", "ytvis_pair_valid_dcvc_1", "ytvis_pair_valid_dcvc_2", "ytvis_pair_valid_dcvc_3")
+  TEST: ("ytvis_pair_valid_x264_26", "ytvis_pair_valid_x264_29", "ytvis_pair_valid_x264_32", "ytvis_pair_valid_x264_35", "ytvis_pair_valid_x265_26", "ytvis_pair_valid_x265_29", "ytvis_pair_valid_x265_32", "ytvis_pair_valid_x265_35", "ytvis_pair_valid_dcvc_0", "ytvis_pair_valid_dcvc_1", "ytvis_pair_valid_dcvc_2", "ytvis_pair_valid_dcvc_3", "ytvis_pair_valid_dc_0", "ytvis_pair_valid_dc_1", "ytvis_pair_valid_dc_2", "ytvis_pair_valid_dc_3")
+SOLVER:
+  IMS_PER_BATCH: 8
+  BASE_LR: 1e-4
+  MAX_ITER: 90000 
+  CHECKPOINT_PERIOD: 10000
+  BACKBONE_MULTIPLIER: 1.0
+  BACKBONE_DISTORTION_EXTRACTOR_MULTIPLIER: 2.0
+  BACKBONE_DISTORTION_EMBED_MULTIPLIER: 1.0
+  BACKBONE_DISTORTION_LAYER_MULTIPLIER: 1.0
+OUTPUT_DIR: "./ckpt/train-7-1"

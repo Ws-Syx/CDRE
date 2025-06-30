@@ -1,0 +1,22 @@
+DATASETS:
+  TRAIN: ("ytvis_2019_train_merge_v6_pair",)
+  TEST: ("ytvis_2019_val_dcvc_dc_psnr_3", "ytvis_2019_val_dcvc_dc_psnr_2", "ytvis_2019_val_dcvc_dc_psnr_1", "ytvis_2019_val_dcvc_dc_psnr_0", "ytvis_2019_val_dcvc_psnr_3", "ytvis_2019_val_dcvc_psnr_2", "ytvis_2019_val_dcvc_psnr_1", "ytvis_2019_val_dcvc_psnr_0", "ytvis_2019_val_x265_26", "ytvis_2019_val_x265_29", "ytvis_2019_val_x265_32", "ytvis_2019_val_x265_35", "ytvis_2019_val_x264_26", "ytvis_2019_val_x264_29", "ytvis_2019_val_x264_32", "ytvis_2019_val_x264_35")
+  # TEST: ("ytvis_2019_val_dcvc_dc_psnr_3",)
+  
+SOLVER:
+  HEAD_MULTIPLIER: 0.0
+  BACKBONE_MULTIPLIER: 0.0
+  BACKBONE_DISTORTION_EXTRACTOR_MULTIPLIER: 1.0
+  BACKBONE_DISTORTION_LAYERS_MULTIPLIER: 1.0
+  BACKBONE_DISTORTION_CA_MULTIPLIER: 1.0
+  CHECKPOINT_PERIOD: 5000
+  IMS_PER_BATCH: 4
+  MAX_ITER: 200000
+  STEPS: (100000, )
+  BASE_LR: 1e-4
+  GAMMA: 0.1
+MODEL:
+  MASK_FORMER:
+    COSINE_WEIGHT: 4.0
+    BPP_WEIGHT: 0.01
+OUTPUT_DIR: "./ckpt/train-50-5"

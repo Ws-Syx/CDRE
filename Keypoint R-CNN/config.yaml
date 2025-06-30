@@ -1,0 +1,24 @@
+DATALOADER:
+  NUM_WORKERS: 2
+DATASETS:
+  TRAIN: ("keypoint_train_merge_pair", )
+  TEST: ("keypoint_valid_pair_x264_30", "keypoint_valid_pair_x264_35", "keypoint_valid_pair_x264_40", "keypoint_valid_pair_x264_45", "keypoint_valid_pair_x265_30", "keypoint_valid_pair_x265_35", "keypoint_valid_pair_x265_40", "keypoint_valid_pair_x265_45", "keypoint_valid_pair_jpeg2000_10", "keypoint_valid_pair_jpeg2000_20", "keypoint_valid_pair_jpeg2000_30", "keypoint_valid_pair_jpeg2000_40", "keypoint_valid_pair_cheng2020_4", "keypoint_valid_pair_cheng2020_3", "keypoint_valid_pair_cheng2020_2", "keypoint_valid_pair_cheng2020_1")
+MODEL:
+  # WEIGHTS: "./ckpt/keypoint-rcnn-r50-ff9w.pth"
+  WEIGHTS: "./ckpt/keypoint-rcnn-r50-1x.pkl"
+  META_ARCHITECTURE: "GeneralizedRCNN_v2"
+  BACKBONE:
+    NAME: "build_resnet_fpn_backbone_v3"
+SOLVER:
+  IMS_PER_BATCH: 8
+  MAX_ITER: 60000 
+  CHECKPOINT_PERIOD: 5000
+  STEPS: (20000, 40000)
+  BASE_LR: 1e-4
+  GAMMA: 0.1
+  HEAD_MULTIPLIER: 0.0
+  BACKBONE_MULTIPLIER: 0.0
+  BACKBONE_DISTORTION_EXTRACTOR_MULTIPLIER: 1.0
+  BACKBONE_DISTORTION_EMBED_MULTIPLIER: 1.0
+  BACKBONE_DISTORTION_LAYER_MULTIPLIER: 1.0
+OUTPUT_DIR: "./ckpt/train-3-3"
