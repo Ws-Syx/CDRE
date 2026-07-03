@@ -1,0 +1,59 @@
+# ============================================================
+# CDRE: Compression Distortion Representation Embedding
+# ============================================================
+
+# --- Python bytecode ---
+__pycache__/
+*.py[cod]
+*.pyo
+*$py.class
+
+# --- Model checkpoints & weights ---
+ckpt/
+*.pth
+*.pkl
+*.pt
+
+# --- Training artifacts ---
+train.log
+*.log
+output/
+wandb/
+
+# --- Build / packaging ---
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+
+# --- IDE & editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# --- Conda / venv ---
+.env
+.venv/
+env/
+venv/
+
+# --- detectron2 compiled ops ---
+detectron2/_C.*.so
+detectron2/**/_C.*.so
+
+# --- Mask2Former compiled ops ---
+**/MultiScaleDeformableAttention.egg-info/
+**/ops/build/
+
+# --- Misc ---
+*.tar.gz
+*.zip
